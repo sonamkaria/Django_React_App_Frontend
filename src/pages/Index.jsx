@@ -30,9 +30,10 @@ export default function Index({ blogs, createBlog }) {
   // loaded function
   const loaded = () =>
     blogs.map((blog) => (
-      <div key={blog.slug} className="blog">
-        <Link to={`/blogs/${blog.slug}`}>
+      <div key={blog.id} className="blog">
+        <Link to={`/blogs/${blog.id}`}>
           <h1>{blog.title}</h1>
+          <p>{blog.author}</p>
         </Link>
         {/* <img src={blog.image} alt={blog.name} /> */}
         <h3>{blog.title}</h3>
@@ -43,30 +44,37 @@ export default function Index({ blogs, createBlog }) {
 
   return (
     <section>
-      {/* <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <input
-          type="text"
-          name="name"
-          placeholder="name"
-          value={form.name}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="image"
-          placeholder="image"
-          value={form.image}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
+          type="title"
           name="title"
           placeholder="title"
           value={form.title}
           onChange={handleChange}
         />
+        <input
+          type="description"
+          name="description"
+          placeholder="description"
+          value={form.description}
+          onChange={handleChange}
+        />
+        <input
+          type="author"
+          name="author"
+          placeholder="author"
+          value={form.author}
+          onChange={handleChange}
+        />
+        <input
+          type="slug"
+          name="slug"
+          placeholder="slug"
+          value={form.slug}
+          onChange={handleChange}
+        />
         <input type="submit" value="Submit"/>
-      </form> */}
+      </form>
       {blogs ? loaded() : loading()}
     </section>
   );

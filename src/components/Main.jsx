@@ -21,16 +21,30 @@ export default function Main() {
   }
 
 
-
+  
   // CREATE
   const createBlog = async (blog) => {
     // fetch - POST
+    await fetch(URL, {
+        method: "POST",
+        headers:{
+            "Content-Type":"Application/json"
+        },
+        body: JSON.stringify(blog)
+    })
     getBlogs();
   };
 
   // UPDATE
   const updateBlog = async (blog, id) => {
     // fetch - PUT
+    await fetch(URL + id,{
+        method:"PUT",
+        headers:{
+            "Content-Type":"Application/json"
+        },
+        body:JSON.stringify(blog)
+    })
     getBlogs();
   };
 
@@ -38,6 +52,9 @@ export default function Main() {
   // DELETE
   const deleteBlog = async (id) => {
     // fetch - DELETE
+    await fetch(URL + id, {
+        method: "DELETE"
+    })
     getBlogs();
   };
 
@@ -50,11 +67,11 @@ export default function Main() {
     <main>
       <Routes>
         <Route
-          path="/"
+          path="/blogs"
           element={<Index blogs={blogs} createBlog={createBlog} />}
         />
         <Route
-          path="/blogs/:slug"
+          path="/blogs/:id"
           element={
             <Show
               blogs={blogs}

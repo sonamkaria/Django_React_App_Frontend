@@ -30,14 +30,11 @@ console.log(blog)
 
 
   return (
-    <div className="blog">
+    <div className="container mt-5">
       <h1>{blog?.title}</h1>
       <h2>{blog?.description}</h2>
-      <h3>{blog?.author}</h3>
       <h3>{blog?.slug}</h3>
-      <button id="DELETE" onClick={removeBlog}>
-        Delete
-      </button>
+
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -53,22 +50,19 @@ console.log(blog)
           value={editForm?.description}
           onChange={handleChange}
         />
-        <input
-          type="text"
-          name="author"
-          placeholder="author"
-          value={editForm?.author}
-          onChange={handleChange}
-        />
+  
         <input
           type="text"
           name="slug"
-          placeholder="slug"
+          placeholder="author"
           value={editForm?.slug}
           onChange={handleChange}
         />
         <button type="submit">Update Blog</button>
       </form>
+      <button class="btn btn-secondary" tabindex="-1" role="button" id="DELETE" onClick={removeBlog}>
+        Delete
+      </button>
     </div>
   );
 }

@@ -24,10 +24,10 @@
 ---
 ### ERD
 
-#### title 
-#### description
-#### slug 
-#### published 
+#### title - text
+#### description -text
+#### slug - pk
+#### published -datetime
 
 ---
 
@@ -44,11 +44,12 @@
 
 ### Getting Started: 
 #### TRELLO BOARD: https://trello.com/b/itE9qikd/blog-django-app#
-
+#### ![banner](./images/trello.png)
 ---
 
 #### Netlify Link: https://idyllic-marshmallow-26d96f.netlify.app/blogs
-
+#### Backend Link: https://github.com/sonamkaria/Django_React_App
+#### Frontend Link: https://github.com/sonamkaria/Django_React_App_Frontend
 ---
 
 ### Future Enhancements: 
